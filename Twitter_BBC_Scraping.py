@@ -74,6 +74,14 @@ while True:
         Like = driver.find_element(By.XPATH,".//div[@data-testid='like']").text
         Likes.append(Like)
         
+        UserTags = list(set(UserTags))
+        TimeStamps = list(set(TimeStamps))
+        Tweets = list(set(Tweets))
+        Replys = list(set(Replys))
+        reTweets = list(set(reTweets))
+        Likes = list(set(Likes))
+        
+        
     driver.execute_script('window.scrollTo(0,document.body.scrollHeight);')
     sleep(3)
     articles = driver.find_elements(By.XPATH,"//article[@data-testid='tweet']")
